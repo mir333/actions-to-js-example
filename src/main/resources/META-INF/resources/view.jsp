@@ -15,20 +15,22 @@
 <c:out value="${permissionsMap}"/>
 
 <aui:script>
-    var permissionsMap = JSON.parse('${permissionsMap}');
+    (function($){
+        var permissionsMap = JSON.parse('${permissionsMap}');
 
-    if(permissionsMap.view){
-        $("#js-view-permission").show()
-    }else {
-        $("#js-view-permission").hide()
-    }
+        if(permissionsMap.view){
+            $(".js-view-permission").show()
+        }else {
+            $(".js-view-permission").hide()
+        }
 
 
-    if(permissionsMap.delete){
-        $("#js-delete-permission").show()
-    }else {
-        $("#js-delete-permission").hide()
-    }
+        if(permissionsMap.delete){
+            $(".js-delete-permission").show()
+        }else {
+            $(".js-delete-permission").hide()
+        }
+    })($)
 
 
 </aui:script>
